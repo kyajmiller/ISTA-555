@@ -1,0 +1,47 @@
+Project 4 Stuff
+
+The Problem: Predict whether a state is liberal or conservative based on food related tweets. 
+
+http://www.politico.com/news/stories/1112/83320.html 
+Election results by state 2012 presidential election
+
+Liberal/Conservative
+
+Liberal States:
+Washingon, Oregon, California, Nevada, Colorado, New Mexico, Minnesota, Iowa, Michigan, Illinois, Wisconsin, Ohio, Virginia, Pennsylvania, New York, Delaware,
+Maryland, District of Columbia, New Jersey, Conneticut, Rhode Island, Massachusetts,
+Vermont, New Hampshire, Maine, Hawaii, Florida
+
+Conservative States:
+Idaho, Montana, Wyoming, Utah, Arizona, North Dakota, South Dakota, Nebraska, 
+Kansas, Oklahoma, Texas, Missouri, Arkansas, Louisiana, Indiana, Kentucky,
+Tennessee, Alabama, Mississippi, West Viginia, North Carolina, South Carolina,
+Georgia, Alaska
+
+Liberal:
+WA, OR, CA, NV, CO, NM, MN, IA, WI, MI, IL, OH, VA, DC, MD, DE, PA, NJ, NY, CT, RI, MA, NH, VT, ME, FL, HI 
+
+Conservative: 
+ID, MT, WY, UT, AZ, ND, SD, NE, KS, OK, TX, MO, AR, LA, IL, KY, TN, MS, AL, WV, NC, SC, GA, AK
+
+Training vs Testing Data:
+First 2/3 of original file (49750 lines) = training
+25628 lines = testing
+
+Preprocessing
+Tokenization - tokenize on whitespace, filter out urls (startswith http://) 
+filter out twitter handles
+filter out floating punctuation
+remove punctuation from ends of words
+
+Training
+based on the state, tag each feature set with liberal/conservative 
+don't want the machine to make a correlation between the state itself and the label
+so even though want to keep the state label, make the machine predict political
+affiliation based on the tweet alone, then after done gather together all of the 
+results by state and then use those results to predict if the state itself is 
+liberal/conservative (probably based on which result is most common)
+
+Liberal vs Conservative Food Lexicons
+http://rack.0.mshcdn.com/media/ZgkyMDEyLzEyLzA0L2I1L2h1bmNoaW5mb2dyLmJHay5qcGcKcAl0aHVtYgkxMjAweDk2MDA-/86cda050/550/hunch-infographic.jpg
+http://blogs.wsj.com/washwire/2014/05/02/liberals-eat-here-conservatives-eat-there/
